@@ -6,6 +6,7 @@ platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'Example' do
+  use_modular_headers!
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -56,9 +57,9 @@ target 'Example' do
     pod 'ReactCommon/turbomodule/core', :path => "../node_modules/react-native/ReactCommon"
     pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga', :modular_headers => true
 
-    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-    pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
-    pod 'RCT-Folly', :podspec => "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
+    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec', :modular_headers => false
+    pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec', :modular_headers => false
+    pod 'RCT-Folly', :podspec => "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec", :modular_headers => false
     pod 'React-perflogger', :path => '../node_modules/react-native/ReactCommon/reactperflogger'
     pod 'React-runtimeexecutor', :path => '../node_modules/react-native/ReactCommon/runtimeexecutor'
     pod 'React-logger',  :path => '../node_modules/react-native/ReactCommon/logger'
