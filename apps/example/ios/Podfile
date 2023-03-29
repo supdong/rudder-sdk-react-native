@@ -4,8 +4,6 @@ require_relative '../../../node_modules/@nrwl/react-native/nx_post_install'
 
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
-# Refer the Firebase doc: https://firebase.google.com/docs/ios/link-firebase-static-dynamic
-use_frameworks! :linkage => :static
 
 target 'Example' do
   config = use_native_modules!
